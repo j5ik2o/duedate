@@ -61,7 +61,7 @@ object DueDate {
     }
 
     override def complete(listener: Option[DueDate => Unit]): DueDate = {
-      val newDueDate = Canceled(dueDate, zoneOffset)
+      val newDueDate = Completed(dueDate, zoneOffset)
       listener.foreach(_(newDueDate))
       newDueDate
     }
